@@ -118,10 +118,7 @@ The `_all` field can be enabled per-type by setting `enabled` to `true`:
 PUT my_index
 {
   "mappings": {
-    "type_1": { <1>
-      "properties": {...}
-    },
-    "type_2": { <2>
+    "type_1": { <2>
       "_all": {
         "enabled": true
       },
@@ -134,8 +131,7 @@ PUT my_index
 // TEST[skip:_all is no longer allowed]
 // CONSOLE
 
-<1> The `_all` field in `type_1` is disabled.
-<2> The `_all` field in `type_2` is enabled.
+<1> The `_all` field in `type_1` is enabled.
 
 If the `_all` field is enabled, then URI search requests and the `query_string`
 and `simple_query_string` queries can automatically use it for queries (see
